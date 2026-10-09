@@ -1,0 +1,850 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- I learned about UTF-8 character encoding from a YouTube tutorial. Helps with
+ special characters and symbols showing up in the browser. -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Rate My Party | Florida Edition by Ashley Alexander</title>
+
+  <style>
+
+    /* WEBSITE STYLING */
+    body {
+      background-color: #11121D;
+      color: #F6F0FF;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    /* GROUPING SELECTOR */
+    h1, h2, h3 {
+      color: #F6F0FF;
+    }
+
+    /* GROUPING SELECTOR */
+    p, li, label {
+      line-height: 1.6;
+    }
+
+    /* NAVIGATION */
+    nav {
+      background-color: #19172B;
+      text-align: center;
+      padding: 20px;
+      border-bottom: 1px solid #A98CF4;
+    }
+
+    /* DESCENDANT SELECTOR */
+    nav a {
+      color: #F6F0FF;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 12px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #A98CF4;
+    }
+
+    /* ID SELECTOR - TITLE */
+    #main-title {
+      color: #D4F06D;
+      font-size: 65px;
+      text-align: center;
+      margin-bottom: 10px;
+      text-shadow: 3px 3px 5px #503A7C;
+    }
+
+    /* CLASS SELECTOR - HEADING */
+    .small-heading {
+      color: #A98CF4;
+      text-align: center;
+      letter-spacing: 3px;
+      font-weight: bold;
+    }
+
+    /* CLASS SELECTOR - TAGLINE */
+    .tagline {
+      color: #F6F0FF;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    /* ID SELECTOR - BANNER IMAGE */
+    #banner-image {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ID SELECTOR - WELCOME AREA */
+    #welcome {
+      background-color: #19172B;
+      text-align: center;
+      padding: 35px;
+    }
+
+    /* CLASS SELECTOR - BUTTONS */
+    .main-button {
+      display: inline-block;
+      background-color: #A98CF4;
+      color: #11121D;
+      padding: 15px 25px;
+      margin: 10px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+
+    .main-button:hover {
+      background-color: #D4F06D;
+    }
+
+    /* CLASS SELECTOR - OUTLINED BUTTON */
+    .outline-button {
+      display: inline-block;
+      background-color: #11121D;
+      color: #F6F0FF;
+      border: 2px solid #A98CF4;
+      padding: 13px 25px;
+      margin: 10px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+
+    .outline-button:hover {
+      background-color: #29253F;
+    }
+
+    /* CLASS SELECTOR - PAGE SECTIONS */
+    .section {
+      padding: 35px;
+    }
+
+    /* CLASS SELECTOR - SECTION HEADINGS */
+    .section-title {
+      color: #F6F0FF;
+      font-size: 28px;
+      letter-spacing: 2px;
+      border-bottom: 1px solid #A98CF4;
+      padding-bottom: 12px;
+    }
+
+    /* PARTY CARD CONTAINER */
+    .party-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* CLASS SELECTOR - PARTY CARDS */
+    .party-card {
+      background-color: #29253F;
+      border: 1px solid #A98CF4;
+      border-radius: 18px;
+      padding: 15px;
+      flex: 1;
+      min-width: 230px;
+    }
+
+    /* CLASS SELECTOR - PARTY IMAGES */
+    .party-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
+
+    /* DESCENDANT SELECTOR */
+    .party-card h3 {
+      color: #F6F0FF;
+      margin-bottom: 5px;
+    }
+
+    /* DESCENDANT SELECTOR */
+    .party-card p {
+      color: #E6DFF2;
+    }
+
+    /* CLASS SELECTOR - RATINGS */
+    .rating {
+      color: #D4F06D;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    /* DESCENDANT SELECTOR - PARTY RATINGS */
+    .party-card .rating {
+      color: #D4F06D;
+    }
+
+    /* CLASS SELECTOR - PARTY TYPE */
+    .party-type {
+      display: inline-block;
+      background-color: #A98CF4;
+      color: #11121D;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    /* UNIVERSITY BUTTON CONTAINER */
+    .university-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    /* CLASS SELECTOR - UNIVERSITY BUTTONS */
+    .university-button {
+      display: inline-block;
+      padding: 15px 25px;
+      border: 2px solid #A98CF4;
+      border-radius: 30px;
+      color: #F6F0FF;
+      background-color: #19172B;
+      font-weight: bold;
+      text-align: center;
+      flex: 1;
+    }
+
+    /* ID SELECTORS - UNIVERSITY ACCENTS */
+    #ucf {
+      border-color: #D4F06D;
+    }
+
+    #fsu {
+      border-color: #F46B9B;
+    }
+
+    #uf {
+      border-color: #4B91FF;
+    }
+
+    #usf {
+      border-color: #45D9A0;
+    }
+
+    #fau {
+      border-color: #F46B9B;
+    }
+
+    #fiu {
+      border-color: #A98CF4;
+    }
+
+    /* REVIEW CARD CONTAINER */
+    .review-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    /* CLASS SELECTOR - REVIEW CARDS */
+    .review-card {
+      background-color: #29253F;
+      border: 1px solid #A98CF4;
+      border-radius: 15px;
+      padding: 20px;
+      flex: 1;
+      min-width: 230px;
+    }
+
+    /* DESCENDANT SELECTOR */
+    .review-card h3 {
+      margin-top: 5px;
+    }
+
+    /* CLASS SELECTOR - REVIEW IMAGES */
+    .review-image {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+    }
+
+    /* CLASS SELECTOR - USERNAMES */
+    .username {
+      color: #A98CF4;
+      font-weight: bold;
+    }
+
+    /* DESCENDANT SELECTOR */
+    .review-card .rating {
+      color: #D4F06D;
+    }
+
+    /* ID SELECTOR - REVIEW FORM */
+    #review-form {
+      background-color: #29253F;
+      border: 1px solid #A98CF4;
+      border-radius: 18px;
+      padding: 30px;
+    }
+
+    /* GROUPING SELECTOR - FORM  */
+    input, select, textarea {
+      background-color: #19172B;
+      color: #F6F0FF;
+      border: 1px solid #A98CF4;
+      border-radius: 8px;
+      padding: 12px;
+      margin: 10px 0;
+      font-family: Arial, sans-serif;
+      box-sizing: border-box;
+      max-width: 100%;
+    }
+
+    /* CLASS SELECTOR - FORM ROW */
+    .form-row {
+      margin-bottom: 15px;
+    }
+
+    /* CLASS SELECTOR - SUBMIT BUTTON */
+    .submit-button {
+      background-color: #A98CF4;
+      color: #11121D;
+      border: none;
+      border-radius: 30px;
+      padding: 15px 35px;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .submit-button:hover {
+      background-color: #D4F06D;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #19172B;
+      border-top: 1px solid #A98CF4;
+      padding: 30px;
+      text-align: center;
+    }
+
+    /* DESCENDANT SELECTOR */
+    footer p {
+      color: #C9BCE0;
+    }
+
+    /* SMALL SCREEN STYLING */
+    @media (max-width: 600px) {
+
+      #main-title {
+        font-size: 40px;
+      }
+
+      #banner-image {
+        height: 240px;
+      }
+
+      .section {
+        padding: 20px;
+      }
+
+      .party-image {
+        height: 190px;
+      }
+
+      .review-image {
+        height: 160px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 8px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#parties">Parties</a>
+    <a href="#universities">Universities</a>
+    <a href="#reviews">Student Reviews</a>
+    <a href="#submit">Submit a Review</a>
+  </nav>
+
+
+  <!-- HOMEPAGE -->
+  <header id="home">
+
+    <!-- BANNER  -->
+    <img
+      id="banner-image"
+      src="partybanner.jpeg"
+      alt="Colorful disco party"
+    >
+
+    <div id="welcome">
+
+      <p class="small-heading">
+        FLORIDA COLLEGE NIGHTLIFE
+      </p>
+
+      <h1 id="main-title">
+        RATE MY PARTY
+      </h1>
+
+      <p class="tagline">
+        SO YOU KNOW WHAT TO EXPECT
+      </p>
+
+      <p>
+        Discover parties, explore student ratings,
+        and share your nightlife experiences
+        from colleges across Florida. (contact support
+        to add your parties.)
+      </p>
+
+      <a href="#parties" class="main-button">
+        EXPLORE PARTIES →
+      </a>
+
+      <a href="#submit" class="outline-button">
+        LEAVE A REVIEW
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- FEATURED PARTIES -->
+  <section id="parties" class="section">
+
+    <h2 class="section-title">
+      FEATURED PARTIES 
+    </h2>
+
+    <div class="party-container">
+
+      <!-- UCF PARTY -->
+      <div class="party-card">
+
+        <img
+          class="party-image"
+          src="ucfparty.jpeg"
+          alt="Neon Nights party"
+        >
+
+        <h3>Delta Phi Neon Nights</h3>
+
+        <p>UCF</p>
+
+        <span class="party-type">
+          THEMED PARTY
+        </span>
+
+        <p class="rating">
+          ★★★★ 4/5
+        </p>
+
+        <p>
+          A neon-themed college party thrown by
+          Delta Phi Omega Soroity with 3 DJs, 2000s
+          music, and dancing. Tickets $45.
+        </p>
+
+      </div>
+
+
+      <!-- FSU PARTY -->
+      <div class="party-card">
+
+        <img
+          class="party-image"
+          src="fsuparty.jpeg"
+          alt="Alfie's House Party"
+        >
+
+        <h3>Alfie's House Party</h3>
+
+        <p>FSU</p>
+
+        <span class="party-type">
+          HOUSE PARTY
+        </span>
+
+        <p class="rating">
+          ★★★ 3/5
+        </p>
+
+        <p>
+          DM: @alfie563 for tickets.
+        </p>
+
+      </div>
+
+
+      <!-- UF PARTY -->
+      <div class="party-card">
+
+        <img
+          class="party-image"
+          src="ufparty.jpeg"
+          alt="Alpha Phi Halloween party"
+        >
+
+        <h3>Alpha Phi Halloween Party</h3>
+
+        <p>UF</p>
+
+        <span class="party-type">
+          THEMED PARTY
+        </span>
+
+        <p class="rating">
+          ★★★★ 3.7/5
+        </p>
+
+        <p>
+          Alpha Phi's official Halloween Party.
+          Tickets are $25. Ladies free till 12 a.m.
+          No custume= No entry!
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BROWSE BY UNIVERSITY -->
+  <section id="universities" class="section">
+
+    <h2 class="section-title">
+      BROWSE BY UNIVERSITY 
+    </h2>
+
+    <p>
+      Explore nightlife from Florida universities.
+    </p>
+
+    <div class="university-container">
+
+      <div class="university-button" id="ucf">
+        UCF
+      </div>
+
+      <div class="university-button" id="fsu">
+        FSU
+      </div>
+
+      <div class="university-button" id="uf">
+        UF
+      </div>
+
+      <div class="university-button" id="usf">
+        USF
+      </div>
+
+      <div class="university-button" id="fau">
+        FAU
+      </div>
+
+      <div class="university-button" id="fiu">
+        FIU
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- STUDENT REVIEWS -->
+  <section id="reviews" class="section">
+
+    <h2 class="section-title">
+      STUDENT REVIEWS 
+    </h2>
+
+    <div class="review-container">
+
+      <!-- REVIEW 1 -->
+      <div class="review-card">
+
+        <img
+          class="review-image"
+          src="review1.jpeg"
+          alt="Neon Nights review photo"
+        >
+
+        <h3> Delta Phi Neon Nights - UCF</h3>
+
+        <p class="username">
+          @knightlife22
+        </p>
+
+        <p class="rating">
+          ★★★
+        </p>
+
+        <p>
+          The music was amazing and everyone
+          was dancing. Parking was awful! DEF
+          uber. Also don't know if it's worth
+          $45 entry.
+        </p>
+
+      </div>
+
+
+      <!-- REVIEW 2 -->
+      <div class="review-card">
+
+        <img
+          class="review-image"
+          src="review2.jpeg"
+          alt="Alfie's House Party review photo"
+        >
+
+        <h3>Alfie's House Party - FSU</h3>
+
+        <p class="username">
+          Anonymous
+        </p>
+
+        <p class="rating">
+          ★★★★☆
+        </p>
+
+        <p>
+          Shoutout my guy Alfie for throwing the 
+          best welcome back parties! Excited for 
+          next year. (Invite only btw)
+        </p>
+
+      </div>
+
+
+      <!-- REVIEW 3 -->
+      <div class="review-card">
+
+        <img
+          class="review-image"
+          src="review3.jpeg"
+          alt="Alpha Phi Halloween review photo"
+        >
+
+        <h3>Alpha Phi Halloween Party - UF</h3>
+
+        <p class="username">
+          @gatorgirl
+        </p>
+
+        <p class="rating">
+          ★★
+        </p>
+
+        <p>
+          Had no where else to go but had fun.
+          It is 21+ and they are strict. Alvin's 
+          Tavern offers free parking but UBER...
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- LEAVE YOUR REVIEW -->
+  <section id="submit" class="section">
+
+    <h2 class="section-title">
+      LEAVE YOUR REVIEW 
+    </h2>
+
+    <p>
+      Tell other Florida college students
+      about your party experience!
+    </p>
+
+    <form id="review-form">
+
+      <!-- UNIVERSITY -->
+      <div class="form-row">
+
+        <label for="university">
+          Choose Your University:
+        </label>
+
+        <br>
+
+        <select id="university" name="university">
+          <option>UCF</option>
+          <option>FSU</option>
+          <option>UF</option>
+          <option>USF</option>
+          <option>FAU</option>
+          <option>FIU</option>
+        </select>
+
+      </div>
+
+
+      <!-- PARTY NAME -->
+      <div class="form-row">
+
+        <label for="party-name">
+          Party Name:
+        </label>
+
+        <br>
+
+        <input
+          type="text"
+          id="party-name"
+          name="party-name"
+          placeholder="Enter party name"
+        >
+
+      </div>
+
+
+      <!-- POSTING OPTIONS -->
+      <div class="form-row">
+
+        <p>How would you like to post?</p>
+
+        <input
+          type="radio"
+          id="anonymous"
+          name="post-type"
+          value="anonymous"
+          checked
+        >
+
+        <label for="anonymous">
+          Post Anonymously
+        </label>
+
+        <br>
+
+        <input
+          type="radio"
+          id="post-username"
+          name="post-type"
+          value="username"
+        >
+
+        <label for="post-username">
+          Post with Username
+        </label>
+
+      </div>
+
+
+      <!-- USERNAME -->
+      <div class="form-row">
+
+        <label for="username">
+          Username (if applicable):
+        </label>
+
+        <br>
+
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Enter username"
+        >
+
+      </div>
+
+
+      <!--  RATING -->
+      <div class="form-row">
+
+        <label for="stars">
+          Rate the Party:
+        </label>
+
+        <br>
+
+        <select id="stars" name="stars">
+          <option>5 Stars</option>
+          <option>4 Stars</option>
+          <option>3 Stars</option>
+          <option>2 Stars</option>
+          <option>1 Star</option>
+        </select>
+
+      </div>
+
+
+      <!-- WRITTEN REVIEW -->
+      <div class="form-row">
+
+        <label for="review">
+          Your Review:
+        </label>
+
+        <br>
+
+        <textarea
+          id="review"
+          name="review"
+          rows="5"
+          cols="45"
+          placeholder="Tell us about the party..."
+        ></textarea>
+
+      </div>
+
+
+      <!-- SUBMIT BUTTON -->
+      <button type="button" class="submit-button">
+        POST MY REVIEW →
+      </button>
+
+    </form>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <h3>RATE MY PARTY</h3>
+
+    <p>FLORIDA EDITION</p>
+
+    <p>
+      Made for Florida College Students
+    </p>
+
+    <p>
+      Mock website by Ashley Alexander using HTML and CSS.
+    </p>
+
+  </footer>
+
+</body>
+</html>
+

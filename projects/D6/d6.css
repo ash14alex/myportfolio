@@ -1,0 +1,221 @@
+/* ELEMENT SELECTOR */
+body {
+    background-color: #100c0c;
+    color: #d8c7aa;
+    font-family: Georgia, "Times New Roman", serif;
+    margin: 0;
+}
+
+
+/* ID SELECTOR */
+#top {
+    text-align: center;
+    background-color: #17090c;
+    padding: 8vh 5%;
+    border-bottom: 1px solid #6e2028;
+}
+
+
+/* ELEMENT SELECTOR */
+h1 {
+    color: #eee1c7;
+    font-size: 60px;
+    margin: 10px;
+}
+
+
+/* GROUP SELECTOR */
+h2, h3 {
+    color: #c9a66b;
+}
+
+
+/* NAVIGATION */
+nav {
+    margin-top: 30px;
+}
+
+
+/* DESCENDANT SELECTOR */
+nav a {
+    color: #d8c7aa;
+    text-decoration: none;
+    margin: 20px;
+    font-size: 1em;
+}
+
+
+/* HOVER SELECTOR */
+nav a:hover {
+    color: #8f2635;
+}
+
+
+/* INTRODUCTION */
+#welcome {
+    width: 80%;
+    margin: 50px auto;
+    padding: 30px;
+    line-height: 25px;
+}
+
+
+/* CLASS SELECTOR */
+.entry-label {
+    color: #8f2635;
+    font-size: 12pt;
+    letter-spacing: 3px;
+}
+
+
+/* MAIN JOURNAL */
+#journal {
+    width: 85%;
+    margin: auto;
+}
+
+
+/* CLASS SELECTOR */
+.movie-entry {
+    color: #d8c7aa;
+    min-height: 430px;
+    margin-bottom: 60px;
+    padding: 35px;
+    border-top: 1px solid #6e2028;
+}
+
+
+/*
+   FLOAT:
+   (My understanding) Places the movie poster on the left
+   and allows the information to sit beside it.
+*/
+.movie-poster {
+    float: left;
+    width: 25%;
+    max-width: 250px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+}
+
+
+/*
+   INHERITANCE:
+   movie-info inherits its text color
+   from movie-entry.
+*/
+.movie-info {
+    color: inherit;
+}
+
+
+/* CHILD ELEMENTS ALSO INHERIT THE COLOR */
+.movie-info p {
+    line-height: 30px;
+    font-size: 18px;
+}
+
+
+/*
+   OVERRIDING INHERITANCE:
+   I gave the movie title its own color.
+*/
+.movie-info h2 {
+    color: #eee1c7;
+    font-size: 2em;
+}
+
+
+/* DESCRIPTION  */
+.thoughts {
+    color: #b8a98f;
+    font-style: italic;
+}
+
+
+/* ABOUT SECTION */
+#about {
+    background-color: #17090c;
+    width: 70%;
+    margin: 50px auto;
+    padding: 40px;
+    text-align: center;
+}
+
+
+/* footer */
+footer {
+    background-color: #090707;
+    color: #9d8b73;
+    text-align: center;
+    padding: 40px;
+    line-height: 25px;
+}
+
+
+.footer-quote {
+    font-style: italic;
+}
+
+
+/* ----------------------------------
+   CSS textual data / URL()
+---------------------------------- */
+
+#top {
+    background-image: url("images/background.jpg");
+    background-size: cover;
+}
+
+
+/* ----------------------------------
+   CSS wide  VALUES
+---------------------------------- */
+
+/* Takes its color from its parent */
+.footer-quote {
+    color: inherit;
+}
+
+
+/* Uses the property's original value */
+.thoughts {
+    text-decoration: initial;
+}
+
+
+strong {
+    font-weight: 400;
+}
+
+
+/* Point unit */
+.entry-label {
+    font-size: 12pt;
+}
+
+
+/* EM unit */
+.movie-info h2 {
+    font-size: 2em;
+}
+
+
+/* Pixel unit */
+.movie-info p {
+    font-size: 18px;
+}
+
+
+/* Percentage unit */
+#journal {
+    width: 85%;
+}
+
+
+/* Viewport unit */
+#top {
+    min-height: 25vh;
+}
+
+
